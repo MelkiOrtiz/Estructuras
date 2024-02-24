@@ -40,16 +40,40 @@
 //    numero++;
 //} // Este es el 2do del 2do enunciado 
 
-string contraseña;
+//string contraseña;
+//do
+//{
+//    Console.Write("Ingrese la contraseña: ");
+//    contraseña = Console.ReadLine();
+
+//    if (contraseña != "jutiapa")
+//    {
+//        Console.WriteLine("Contraseña incorrecta. Inténtelo nuevamente.");
+//    }
+//} while (contraseña != "jutiapa");
+
+//Console.WriteLine("¡Contraseña correcta! Bienvenido."); //Este es el 1ro del enunciado 3
+
+Random rnd = new Random();
+int numeroAleatorio = rnd.Next(1, 101);
+int intento;
+
+Console.WriteLine("¡Adivina el número entre 1 y 100!");
+
 do
 {
-    Console.Write("Ingrese la contraseña: ");
-    contraseña = Console.ReadLine();
+    Console.Write("Introduce tu intento: ");
+    intento = int.Parse(Console.ReadLine());
 
-    if (contraseña != "jutiapa")
+    if (intento < numeroAleatorio)
     {
-        Console.WriteLine("Contraseña incorrecta. Inténtelo nuevamente.");
+        Console.WriteLine("El número es mayor.");
     }
-} while (contraseña != "jutiapa");
+    else if (intento > numeroAleatorio)
+    {
+        Console.WriteLine("El número es menor.");
+    }
+} while (intento != numeroAleatorio);
 
-Console.WriteLine("¡Contraseña correcta! Bienvenido.");
+Console.WriteLine("¡Felicidades! ¡Has adivinado el número " + numeroAleatorio + "!"); //Este es el 2do del tercer enunciado
+    
